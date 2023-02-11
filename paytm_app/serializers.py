@@ -49,7 +49,7 @@ class RechargeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Recharge
-        fields = ["mobile", "user", "operator", "circle", "plan","recharge_date","plan_details"]
+        fields = ["mobile", "operator", "circle", "plan","recharge_date","plan_details"]
 
     def get_plan_detail(self, obj):
         data = Plan.objects.filter(price=obj.plan.price)
